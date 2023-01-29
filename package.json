@@ -65,7 +65,6 @@
     "envinfo": "^7.8.1",
     "handlebars": "^4.7.7",
     "inquirer": "^8.2.0",
-    "log-symbols": "^5.0.0",
     "ora": "^5.4.1"
   }
 }

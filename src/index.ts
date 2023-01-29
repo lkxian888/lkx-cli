@@ -3,7 +3,6 @@ import { program } from 'commander';
 import inquirer from 'inquirer';
 import ora from 'ora';
 import chalk from 'chalk';
-import logSymbols from 'log-symbols';
 import path from 'path';
 import fs from 'fs';
 import envinfo from 'envinfo';
@@ -12,6 +11,7 @@ import handlebars from 'handlebars';
 const download = require('download-git-repo');
 
 const gitUrL = 'https://github.com:xian88888888/';
+
 const templates = [
   {
     description: 'project',
@@ -32,11 +32,11 @@ const downloadTemplate = (url: string, name: string, root: string) => {
     download(url, name, { clone: true }, function(err: Error) {
       if (err) {
         spinner.fail(chalk.red('下载失败\n'));
-        console.log(chalk.red(err));
+        console.log(chalk.red(err, '\n'));
         reject(err);
         return;
       }
-      spinner.succeed(chalk.green(`模版下载成功：${root}`));
+      spinner.succeed(chalk.green(`✔模版下载成功：${root}`));
       resolve(1);
     });
   });
@@ -117,7 +117,7 @@ program
   .description('查询可用的项目模板')
   .action(() => {
     templates.forEach(item => {
-      console.log(`\n ${item.description}--${item.name}`);
+      console.log(`\n ${item.description} -- ${item.name}`);
     });
   });
 
