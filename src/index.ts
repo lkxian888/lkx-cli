@@ -29,7 +29,7 @@ const spinner = ora(chalk.yellow('正在下载模版...\n'));
 
 const downloadTemplate = (url: string, name: string, root: string) => {
   return new Promise((resolve, reject) => {
-    download(url, name, { clone: true }, function(err: Error) {
+    download(url, name, function(err: Error) {
       if (err) {
         spinner.fail(chalk.red('下载失败\n'));
         console.log(chalk.red(err, '\n'));

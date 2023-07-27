@@ -2,6 +2,7 @@
   "name": "lkx-cli",
   "main": "lib/index.js",
   "description": "project plugins template",
+  "versions":"1.1.1",
   "authors": {
     "name": "lkx",
     "email": "lkxian888@163.com"
@@ -19,7 +20,7 @@
     "test:update": "umi-test --updateSnapshot"
   },
   "bin": {
-    "lkx": "lib/index.js"
+    "lkxcli": "lib/index.js"
   },
   "lint-staged": {
     "*.ts?(x)": [
